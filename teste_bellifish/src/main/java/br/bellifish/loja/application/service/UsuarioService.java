@@ -1,6 +1,7 @@
 package br.bellifish.loja.application.service;
 
 import br.bellifish.loja.application.dtos.UsuarioDTO;
+import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import br.bellifish.loja.application.interfaces.IUsuarioService;
 import br.bellifish.loja.domain.model.user.Usuario;
 import br.bellifish.loja.domain.repository.IUsuarioRepository;
@@ -23,9 +24,9 @@ public class UsuarioService implements IUsuarioService {
 
 
     @Override
-    public UsuarioDTO criarUsuario(UsuarioDTO usuarioDTO) {
+    public UsuarioDTORequest criarUsuario(UsuarioDTORequest usuarioDTO) {
         Usuario usuario = _modelMapper.map(usuarioDTO, Usuario.class);
-        return _modelMapper.map(_userRepository.save(usuario), UsuarioDTO.class);
+        return _modelMapper.map(_userRepository.save(usuario), UsuarioDTORequest.class);
     }
 
     @Override

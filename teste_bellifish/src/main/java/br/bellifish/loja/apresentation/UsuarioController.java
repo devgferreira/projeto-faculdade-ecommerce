@@ -1,8 +1,10 @@
 package br.bellifish.loja.apresentation;
 
 import br.bellifish.loja.application.dtos.UsuarioDTO;
+import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import br.bellifish.loja.application.interfaces.IUsuarioService;
-import br.bellifish.loja.domain.model.user.response.UsuarioResponse;
+import br.bellifish.loja.domain.model.user.response.BuscarUsuarioPorIdResponse;
+import br.bellifish.loja.domain.model.user.response.UsuarioCriadoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,16 +20,16 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponse> criarUsuario(@RequestBody UsuarioDTO usuario){
-        UsuarioDTO usuarioDTO = _usuarioInterface.criarUsuario(usuario);
-        UsuarioResponse usuarioResponse = new UsuarioResponse(usuarioDTO);
+    public ResponseEntity<UsuarioCriadoResponse> criarUsuario(@RequestBody UsuarioDTORequest usuarioDTORequest){
+        UsuarioDTORequest usuario = _usuarioInterface.criarUsuario(usuarioDTORequest);
+        UsuarioCriadoResponse usuarioResponse = new UsuarioCriadoResponse(usuario);
         return new ResponseEntity<>(usuarioResponse, HttpStatus.CREATED);
     }
 
     @GetMapping("/{usuarioId}")
-    ResponseEntity<UsuarioResponse> buscarUsuarioPorId(@PathVariable Long usuarioId){
+    ResponseEntity<BuscarUsuarioPorIdResponse> buscarUsuarioPorId(@PathVariable Long usuarioId){
         UsuarioDTO usuarioDTO = _usuarioInterface.buscarUsuarioPorId(usuarioId);
-        UsuarioResponse usuarioResponse = new UsuarioResponse(usuarioDTO);
+        BuscarUsuarioPorIdResponse usuarioResponse = new BuscarUsuarioPorIdResponse(usuarioDTO);
         return ResponseEntity.ok(usuarioResponse);
     }
 }
