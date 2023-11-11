@@ -1,8 +1,10 @@
 package br.bellifish.loja.apresentation;
 
+import br.bellifish.loja.application.dtos.LoginDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import br.bellifish.loja.application.interfaces.IUsuarioService;
+import br.bellifish.loja.domain.model.payload.LoginMessage;
 import br.bellifish.loja.domain.model.user.response.BuscarUsuarioPorIdResponse;
 import br.bellifish.loja.domain.model.user.response.UsuarioCriadoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,12 @@ public class UsuarioController {
         UsuarioDTO usuarioDTO = _usuarioInterface.buscarUsuarioPorId(usuarioId);
         BuscarUsuarioPorIdResponse usuarioResponse = new BuscarUsuarioPorIdResponse(usuarioDTO);
         return ResponseEntity.ok(usuarioResponse);
+    }
+
+    @PostMapping(path = "/login")
+    public ResponseEntity<LoginMessage> login(@RequestBody LoginDTO loginDTO)
+    {
+        LoginMessage loginResponse = _usuarioInterface.login(loginDTO);
+        return ResponseEntity.ok(loginResponse);
     }
 }
