@@ -71,6 +71,7 @@ nav li a:hover {
     display: none;
     z-index: 9999;
     background-color: yellow;
+    text-transform: uppercase;
 
 }
 
