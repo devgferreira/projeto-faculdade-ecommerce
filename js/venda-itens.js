@@ -6,9 +6,6 @@ var listProdutos = [
     "https://br.web.img2.acsta.net/medias/nmedia/18/91/08/82/20128877.JPG"
 ];
 
-var listProdutos1 = ["C:/Users/Guilherme/Documents/Projetos/PROJETO_ECOMMERCE/projeto-faculdade-ecommerce/img"
-
-];
 
 
 for (var i = 0; i < listProdutos.length; i++) {
