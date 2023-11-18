@@ -10,16 +10,44 @@ body {
     height: 100%;
 }
 
-
 body {
     width: 100%;
     height: 100%;
 }
 
-.menu-principal {
+
+.menu-1 {
     width: 100%;
     background-color: black;
     height: 80px;
+}
+
+.menu-2 {
+    width: 100%;
+    background-color: yellow;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu-2 div {
+    display: flex;
+    height: 60px;
+    width: 16.5%;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0.1%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.menu-2 div:hover {
+    background: #767e9df1;
 }
 
 .logo {
@@ -64,27 +92,6 @@ nav li a:hover {
 }
 
 
-.dropdown-menu {
-    position: absolute;
-    width: 200px;
-    box-shadow: 0 0 2px black;
-    display: none;
-    z-index: 9999;
-    background-color: yellow;
-    text-transform: uppercase;
-
-}
-
-.dropdown-menu a {
-    display: block;
-    color: black;
-    left: 0px;
-
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
 
 button.slick-prev {
     font-size: 0px;
@@ -118,6 +125,7 @@ button.slick-prev {
 }
 
 .content h1 {
+    padding: 10px;
     font-family: monospace;
     font-size: 30px;
 }
