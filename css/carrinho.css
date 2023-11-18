@@ -20,11 +20,11 @@ body {
     align-items: center;
     min-height: 90vh;
     padding: 5vh;
-    background: yellow;
+    background: rgb(233, 233, 89);
 }
 
 .carrinho {
-    width: 400px;
+    width: 600px;
     height: min-content;
     background: black;
     padding: 35px;
