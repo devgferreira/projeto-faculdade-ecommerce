@@ -8,6 +8,7 @@ import br.bellifish.loja.domain.model.payload.LoginMessage;
 public interface IUsuarioService {
 
     UsuarioDTORequest criarUsuario(UsuarioDTORequest usuarioDTO);
+
     UsuarioDTO buscarUsuarioPorId(Long usuarioId);
 
     LoginMessage login(LoginDTO loginDTO);
