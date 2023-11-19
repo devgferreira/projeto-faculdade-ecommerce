@@ -56,10 +56,16 @@ a:link {
     color: black;
 }
 
+a:visited {
+    color: black;
+}
+
 a:hover {
     text-decoration: none;
     color: black;
 }
+
+
 
 .logo {
     margin-top: 8px;
