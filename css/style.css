@@ -65,7 +65,9 @@ a:hover {
     color: black;
 }
 
-
+a:active {
+    color: black;
+}
 
 .logo {
     margin-top: 8px;
