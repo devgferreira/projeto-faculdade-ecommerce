@@ -1,6 +1,5 @@
 package br.bellifish.loja.domain.model.user.response;
 
-import br.bellifish.loja.application.dtos.UsuarioDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import lombok.AllArgsConstructor;
 import lombok.Data;

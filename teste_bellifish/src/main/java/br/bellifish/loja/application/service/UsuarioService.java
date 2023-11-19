@@ -30,7 +30,7 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDTORequest criarUsuario(UsuarioDTORequest usuarioDTO) {
-       String senha = passwordEncoder.encode(usuarioDTO.getSenha());
+        String senha = passwordEncoder.encode(usuarioDTO.getSenha());
         Usuario usuario = _modelMapper.map(usuarioDTO, Usuario.class);
         usuario.setSenha(senha);
         return _modelMapper.map(_userRepository.save(usuario), UsuarioDTORequest.class);
@@ -46,21 +46,21 @@ public class UsuarioService implements IUsuarioService {
     public LoginMessage login(LoginDTO loginDTO) {
         String msg = "";
         Usuario usuario = _userRepository.findByCpf(loginDTO.getCpf());
-        if(usuario != null){
+        if (usuario != null) {
             String senha = loginDTO.getSenha();
             String senhaCriptografada = usuario.getSenha();
             boolean senhaIgual = passwordEncoder.matches(senha, senhaCriptografada);
-            if(senhaIgual){
+            if (senhaIgual) {
                 Optional<Usuario> usuario1 = _userRepository.findOneByCpfAndSenha(loginDTO.getCpf(), senhaCriptografada);
-                if(usuario1.isPresent()){
+                if (usuario1.isPresent()) {
                     return new LoginMessage("Login Sucess", true);
-                }else{
+                } else {
                     return new LoginMessage("Login Failed", false);
                 }
-            }else{
+            } else {
                 return new LoginMessage("Senha incorreta", false);
             }
-        }else{
+        } else {
             return new LoginMessage("CPF não cadastrado", false);
         }
     }

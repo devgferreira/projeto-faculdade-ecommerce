@@ -12,5 +12,4 @@ public class UsuarioDTORequest {
     private String cpf;
     private Long telefone;
     private String senha;
-
 }

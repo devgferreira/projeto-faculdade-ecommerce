@@ -16,28 +16,28 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/usuarios")
 public class UsuarioController {
     private final IUsuarioService _usuarioInterface;
+
     @Autowired
     public UsuarioController(IUsuarioService usuarioInterface) {
         _usuarioInterface = usuarioInterface;
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioCriadoResponse> criarUsuario(@RequestBody UsuarioDTORequest usuarioDTORequest){
+    public ResponseEntity<UsuarioCriadoResponse> criarUsuario(@RequestBody UsuarioDTORequest usuarioDTORequest) {
         UsuarioDTORequest usuario = _usuarioInterface.criarUsuario(usuarioDTORequest);
         UsuarioCriadoResponse usuarioResponse = new UsuarioCriadoResponse(usuario);
         return new ResponseEntity<>(usuarioResponse, HttpStatus.CREATED);
     }
 
     @GetMapping("/{usuarioId}")
-    ResponseEntity<BuscarUsuarioPorIdResponse> buscarUsuarioPorId(@PathVariable Long usuarioId){
+    ResponseEntity<BuscarUsuarioPorIdResponse> buscarUsuarioPorId(@PathVariable Long usuarioId) {
         UsuarioDTO usuarioDTO = _usuarioInterface.buscarUsuarioPorId(usuarioId);
         BuscarUsuarioPorIdResponse usuarioResponse = new BuscarUsuarioPorIdResponse(usuarioDTO);
         return ResponseEntity.ok(usuarioResponse);
     }
 
     @PostMapping(path = "/login")
-    public ResponseEntity<LoginMessage> login(@RequestBody LoginDTO loginDTO)
-    {
+    public ResponseEntity<LoginMessage> login(@RequestBody LoginDTO loginDTO) {
         LoginMessage loginResponse = _usuarioInterface.login(loginDTO);
         return ResponseEntity.ok(loginResponse);
     }
