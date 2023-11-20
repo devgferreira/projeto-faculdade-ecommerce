@@ -12,6 +12,7 @@ public class BuscarUsuarioPorIdResponse {
     private Long id;
     private String nome;
     private String cpf;
+    private String endereco;
     private Long telefone;
 
     public BuscarUsuarioPorIdResponse(UsuarioDTO usuario) {
@@ -19,5 +20,6 @@ public class BuscarUsuarioPorIdResponse {
         nome = usuario.getNome();
         cpf = usuario.getCpf();
         telefone = usuario.getTelefone();
+        endereco = usuario.getEndereco();
     }
 }

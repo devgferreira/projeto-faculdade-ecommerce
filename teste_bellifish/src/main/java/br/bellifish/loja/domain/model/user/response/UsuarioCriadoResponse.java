@@ -12,10 +12,12 @@ public class UsuarioCriadoResponse {
     private String nome;
     private String cpf;
     private Long telefone;
+    private String endereco;
 
     public UsuarioCriadoResponse(UsuarioDTORequest usuario) {
         nome = usuario.getNome();
         cpf = usuario.getCpf();
         telefone = usuario.getTelefone();
+        endereco = usuario.getEndereco();
     }
 }
