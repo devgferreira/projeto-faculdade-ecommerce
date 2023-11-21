@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BuscarUsuarioPorIdResponse {
+public class BuscarUsuarioPorCpfResponse {
     private Long id;
     private String nome;
     private String cpf;
     private String endereco;
     private Long telefone;
 
-    public BuscarUsuarioPorIdResponse(UsuarioDTO usuario) {
+    public BuscarUsuarioPorCpfResponse(UsuarioDTO usuario) {
         id = usuario.getId();
         nome = usuario.getNome();
         cpf = usuario.getCpf();
