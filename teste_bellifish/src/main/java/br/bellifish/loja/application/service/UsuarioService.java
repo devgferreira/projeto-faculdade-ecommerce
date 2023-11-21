@@ -37,14 +37,13 @@ public class UsuarioService implements IUsuarioService {
     }
 
     @Override
-    public UsuarioDTO buscarUsuarioPorId(Long usuarioId) {
-        Optional<Usuario> usuario = _userRepository.findById(usuarioId);
+    public UsuarioDTO buscarUsuarioPorCpf(String usuarioCpf) {
+        Usuario usuario = _userRepository.findByCpf(usuarioCpf);
         return _modelMapper.map(usuario, UsuarioDTO.class);
     }
 
     @Override
     public LoginMessage login(LoginDTO loginDTO) {
-        String msg = "";
         Usuario usuario = _userRepository.findByCpf(loginDTO.getCpf());
         if (usuario != null) {
             String senha = loginDTO.getSenha();

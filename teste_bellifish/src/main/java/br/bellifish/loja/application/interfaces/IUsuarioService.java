@@ -9,7 +9,7 @@ public interface IUsuarioService {
 
     UsuarioDTORequest criarUsuario(UsuarioDTORequest usuarioDTO);
 
-    UsuarioDTO buscarUsuarioPorId(Long usuarioId);
+    UsuarioDTO buscarUsuarioPorCpf(String usuarioCpf);
 
     LoginMessage login(LoginDTO loginDTO);
 }
