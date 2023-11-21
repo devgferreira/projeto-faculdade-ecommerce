@@ -1,9 +1,13 @@
+import buscarClientes from './buscarCliente.js';
+
+
 const formulario = document.querySelector("form");
-const botao = document.querySelector("button");
 const icpf = document.querySelector(".cpf");
 const isenha = document.querySelector(".senha");
 
+
 function login(){
+   
     fetch("http://localhost:8080/usuarios/login",
         {
             headers: {
@@ -15,11 +19,24 @@ function login(){
                 cpf: icpf.value,
                 senha: isenha.value,
             })
+           
         })
-        .then(function (res) { console.log(res)})
+        .then(res => res.json()) 
+        .then(data => {
+            let status = data.status
+
+            if(!status){
+                return alert("CPF ou Senha invalidos")
+            }else{
+                alert("Login feito com sucesso")
+                buscarClientes(icpf.value)
+                window.location.href = "dados-clientes.html?cpf=" + encodeURIComponent(icpf.value);
+                limpar();
+            }
+        })
         .catch(function (res) {console.log(res)})
-        alert("Login feito com sucesso")
-};
+
+};  
 
 function limpar(){
     isenha.value = "";
@@ -28,6 +45,5 @@ function limpar(){
 
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
-    login();
-    limpar();
+        login();
 });
