@@ -1,3 +1,43 @@
+
+let prodcuts = [
+    {
+        id: 1,
+        name: "PRODUCT 1",
+        images: "1.png",
+        price: 2000
+
+    },
+    {
+        id: 2,
+        name: "PRODUCT 2",
+        images: "1.png",
+        price: 2000
+
+    },
+    {
+        id: 3,
+        name: "PRODUCT 3",
+        images: "1.png",
+        price: 2000
+
+    },
+    {
+        id: 4,
+        name: "PRODUCT 4",
+        images: "1.png",
+        price: 2000
+
+    },
+    {
+        id: 5,
+        name: "PRODUCT 5",
+        images: "1.png",
+        price: 2000
+
+    }
+]
+
+
 const value = document.getElementById('value');
 const plusButton = document.getElementById('plus');
 const minusButton = document.getElementById('minus');
