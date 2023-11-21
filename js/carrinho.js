@@ -199,83 +199,18 @@ const minusButton = document.getElementsByClassName('modelsInfo-button');
 console.log(value);
 
 let count0 = 0;
-let count1 = 0;
-let count2 = 0;
 let intervalId = 0;
 
-plusButton[0].addEventListener('mousedown', () => {
-    value[0].innerHTML++;
-});
+for (let i = 0; i < plusButton.length; i++) {
+    plusButton[i].addEventListener('mousedown', () => {
+        value[i].innerHTML++;
+    });
 
-minusButton[0].addEventListener('mousedown', () => {
-    if (value[0].innerHTML > 0) {
-        value[0].innerHTML--;
-    }
-});
-
-////////////////////////////////////////////////////////////
-
-plusButton[1].addEventListener('mousedown', () => {
-    value[1].innerHTML++;
-});
-
-minusButton[1].addEventListener('mousedown', () => {
-    if (value[1].innerHTML > 0) {
-        value[1].innerHTML--;
-    }
-
-});
-
-////////////////////////////////////////////////////////////
-
-plusButton[2].addEventListener('mousedown', () => {
-    value[2].innerHTML++;
-});
-
-minusButton[2].addEventListener('mousedown', () => {
-    if (value[2].innerHTML > 0) {
-        value[2].innerHTML--;
-    }
-
-});
-
-////////////////////////////////////////////////////////////
-
-plusButton[3].addEventListener('mousedown', () => {
-    value[3].innerHTML++;
-});
-
-minusButton[3].addEventListener('mousedown', () => {
-    if (value[3].innerHTML > 0) {
-        value[3].innerHTML--;
-    }
-
-});
-
-////////////////////////////////////////////////////////////
-
-plusButton[4].addEventListener('mousedown', () => {
-    value[4].innerHTML++;
-});
-
-minusButton[4].addEventListener('mousedown', () => {
-    if (value[4].innerHTML > 0) {
-        value[4].innerHTML--;
-    }
-
-});
-
-////////////////////////////////////////////////////////////
-
-plusButton[5].addEventListener('mousedown', () => {
-    value[5].innerHTML++;
-});
-
-minusButton[5].addEventListener('mousedown', () => {
-    if (value[5].innerHTML > 0) {
-        value[5].innerHTML--;
-    }
-
-});
+    minusButton[i].addEventListener('mousedown', () => {
+        if (value[i].innerHTML > 0) {
+            value[i].innerHTML--;
+        }
+    });
+}
 
 document.addEventListener('mouseup', () => clearInterval(intervalId))
