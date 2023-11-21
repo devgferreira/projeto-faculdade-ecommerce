@@ -115,29 +115,25 @@ body {
     margin-top: 8px;
 }
 
-.carrinho .carrinho-item .contador {
+
+.modelsInfo {
+    display: inline-flex;
+    background-color: #EEE;
+    border-radius: 10px;
+    height: 30px;
     position: absolute;
     right: 15px;
     bottom: 0;
 }
 
-.carrinho .carrinho-item .contador i {
+.modelsInfo button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
     cursor: pointer;
-    width: 25px;
-    height: 35px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-align: center;
-    line-height: 35px;
-    background: yellow;
-    color: black;
-    border-radius: 8px 8px 0 0;
-}
-
-.carrinho .carrinho-item .contador span {
-    margin: 0 6px;
-    color: black;
-    font: 700 1rem 'Poppins';
+    padding: 0px 10px;
+    color: #333;
 }
 
 .carrinho .pagar {
