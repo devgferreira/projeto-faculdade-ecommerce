@@ -19,7 +19,7 @@ plusButton.addEventListener('mousedown', () => {
 
 minusButton.addEventListener('mousedown', () => {
     intervalId = setInterval(() => {
-        if (count > 1) {
+        if (count > 0) {
             count -= 1;
         }
         updateValue();
