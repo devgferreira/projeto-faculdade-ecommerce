@@ -5,7 +5,7 @@ import br.bellifish.loja.application.dtos.UsuarioDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import br.bellifish.loja.application.interfaces.IUsuarioService;
 import br.bellifish.loja.domain.model.payload.LoginMessage;
-import br.bellifish.loja.domain.model.user.response.BuscarUsuarioPorIdResponse;
+import br.bellifish.loja.domain.model.user.response.BuscarUsuarioPorCpfResponse;
 import br.bellifish.loja.domain.model.user.response.UsuarioCriadoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,10 +30,10 @@ public class UsuarioController {
         return new ResponseEntity<>(usuarioResponse, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{usuarioId}")
-    ResponseEntity<BuscarUsuarioPorIdResponse> buscarUsuarioPorId(@PathVariable Long usuarioId) {
-        UsuarioDTO usuarioDTO = _usuarioInterface.buscarUsuarioPorId(usuarioId);
-        BuscarUsuarioPorIdResponse usuarioResponse = new BuscarUsuarioPorIdResponse(usuarioDTO);
+    @GetMapping("/{usuarioCpf}")
+    ResponseEntity<BuscarUsuarioPorCpfResponse> buscarUsuarioPorCpf(@PathVariable String usuarioCpf) {
+        UsuarioDTO usuarioDTO = _usuarioInterface.buscarUsuarioPorCpf(usuarioCpf);
+        BuscarUsuarioPorCpfResponse usuarioResponse = new BuscarUsuarioPorCpfResponse(usuarioDTO);
         return ResponseEntity.ok(usuarioResponse);
     }
 
