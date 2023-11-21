@@ -193,33 +193,89 @@ let prodcuts = [
 
 ]
 
-const value = document.getElementById('value');
-const plusButton = document.getElementById('plus');
-const minusButton = document.getElementById('minus');
+const value = document.getElementsByClassName('value');
+const plusButton = document.getElementsByClassName('plusButton');
+const minusButton = document.getElementsByClassName('modelsInfo-button');
+console.log(value);
 
-
-const updateValue = () => {
-    value.innerHTML = count;
-};
-
-let count = 0;
+let count0 = 0;
+let count1 = 0;
+let count2 = 0;
 let intervalId = 0;
 
-plusButton.addEventListener('mousedown', () => {
-    intervalId = setInterval(() => {
-        count += 1;
-        updateValue();
-    }, 100);
+plusButton[0].addEventListener('mousedown', () => {
+    value[0].innerHTML++;
 });
 
-minusButton.addEventListener('mousedown', () => {
-    intervalId = setInterval(() => {
-        if (count > 0) {
-            count -= 1;
-        }
-        updateValue();
-    }, 100);
+minusButton[0].addEventListener('mousedown', () => {
+    if (value[0].innerHTML > 0) {
+        value[0].innerHTML--;
+    }
 });
 
+////////////////////////////////////////////////////////////
+
+plusButton[1].addEventListener('mousedown', () => {
+    value[1].innerHTML++;
+});
+
+minusButton[1].addEventListener('mousedown', () => {
+    if (value[1].innerHTML > 0) {
+        value[1].innerHTML--;
+    }
+
+});
+
+////////////////////////////////////////////////////////////
+
+plusButton[2].addEventListener('mousedown', () => {
+    value[2].innerHTML++;
+});
+
+minusButton[2].addEventListener('mousedown', () => {
+    if (value[2].innerHTML > 0) {
+        value[2].innerHTML--;
+    }
+
+});
+
+////////////////////////////////////////////////////////////
+
+plusButton[3].addEventListener('mousedown', () => {
+    value[3].innerHTML++;
+});
+
+minusButton[3].addEventListener('mousedown', () => {
+    if (value[3].innerHTML > 0) {
+        value[3].innerHTML--;
+    }
+
+});
+
+////////////////////////////////////////////////////////////
+
+plusButton[4].addEventListener('mousedown', () => {
+    value[4].innerHTML++;
+});
+
+minusButton[4].addEventListener('mousedown', () => {
+    if (value[4].innerHTML > 0) {
+        value[4].innerHTML--;
+    }
+
+});
+
+////////////////////////////////////////////////////////////
+
+plusButton[5].addEventListener('mousedown', () => {
+    value[5].innerHTML++;
+});
+
+minusButton[5].addEventListener('mousedown', () => {
+    if (value[5].innerHTML > 0) {
+        value[5].innerHTML--;
+    }
+
+});
 
 document.addEventListener('mouseup', () => clearInterval(intervalId))

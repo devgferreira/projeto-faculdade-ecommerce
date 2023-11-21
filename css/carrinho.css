@@ -136,7 +136,7 @@ body {
     color: #333;
 }
 
-.carrinho .pagar {
+.carrinho .Adicionar {
     font: 500 1rem 'Poppins';
     cursor: pointer;
     width: 100%;
@@ -148,6 +148,6 @@ body {
     transition: .3s;
 }
 
-.carrinho .pagar:hover {
+.carrinho .Adicionar:hover {
     background: #767e9df1;
 }
