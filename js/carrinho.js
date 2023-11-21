@@ -193,7 +193,6 @@ let prodcuts = [
 
 ]
 
-
 const value = document.getElementById('value');
 const plusButton = document.getElementById('plus');
 const minusButton = document.getElementById('minus');

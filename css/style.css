@@ -85,7 +85,7 @@ a:active {
 
 
 .redes-sociais .quantity {
-    position: fixed;
+    position: absolute;
     width: 60px;
     top: 2vh;
     padding: 3px 10px;
