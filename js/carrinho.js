@@ -188,7 +188,6 @@ let prodcuts = [
         name: "Sardinha",
         images: "sardinha-congelada.jpg",
         price: 14.00
-
     }
 
 ]
@@ -196,7 +195,6 @@ let prodcuts = [
 const value = document.getElementsByClassName('value');
 const plusButton = document.getElementsByClassName('plusButton');
 const minusButton = document.getElementsByClassName('modelsInfo-button');
-console.log(value);
 
 let count0 = 0;
 let intervalId = 0;
@@ -214,3 +212,5 @@ for (let i = 0; i < plusButton.length; i++) {
 }
 
 document.addEventListener('mouseup', () => clearInterval(intervalId))
+
+let carrinho = document.getElementsByClassName('Adicionar');
