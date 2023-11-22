@@ -9,8 +9,13 @@ const buscarCliente = (function() {
             .then(response => response.json())
             .then(data => {
                 resultado.innerHTML = `
-                    <p><strong>Nome:</strong> ${data.nome}</p>
-                    <p><strong>CPF:</strong> ${data.cpf}</p>
+                    <div class="textfield">
+                    <label><strong>Nome:</strong> ${data.nome}</label>
+                    <label><strong>CPF:</strong> ${data.cpf}</label>
+                    <label><strong>Email:</strong> ${data.email}</label>
+                    <label><strong>Número de telefone::</strong> ${data.telefone}</label>
+                    <label><strong>Endereço:</strong> ${data.endereco}</label>
+                    </div>
                 `;
             })
             .catch(error => console.error('Erro ao buscar cliente:', error));
