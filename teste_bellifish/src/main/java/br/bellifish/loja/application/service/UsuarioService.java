@@ -1,5 +1,6 @@
 package br.bellifish.loja.application.service;
 
+import br.bellifish.loja.application.dtos.AtualizarUsuarioDTORequest;
 import br.bellifish.loja.application.dtos.LoginDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTORequest;
@@ -34,6 +35,18 @@ public class UsuarioService implements IUsuarioService {
         Usuario usuario = _modelMapper.map(usuarioDTO, Usuario.class);
         usuario.setSenha(senha);
         return _modelMapper.map(_userRepository.save(usuario), UsuarioDTORequest.class);
+    }
+
+    @Override
+    public AtualizarUsuarioDTORequest atualizarUsuario(String usuarioCpf, AtualizarUsuarioDTORequest usuarioDTORequest) {
+        Usuario usuario = _userRepository.findByCpf(usuarioCpf);
+        usuario.setNome(usuarioDTORequest.getNome());
+        usuario.setEndereco(usuarioDTORequest.getEndereco());
+        if(usuarioDTORequest.getTelefone() != 0){
+            usuario.setTelefone(usuarioDTORequest.getTelefone());
+        }
+        _userRepository.save(usuario);
+        return usuarioDTORequest;
     }
 
     @Override
