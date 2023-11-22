@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/style-dados-clientes.css" rel="stylesheet">
     <script type="module" src="/js/buscarCliente.js" ></script>
+    <script type="module" src="/js/atualizarDadosCliente.js" defer></script>
     <title>Sua Página</title>
 </head>
 <body>
@@ -49,9 +50,21 @@
             <div class="right-dados">
                 
                 <div class="card-dados">
+                    <form action="">
                        
-                    <div id="resultado"></div>
+                        <div id="resultado">
+                            <div class="textfield">
+                                <label><strong>Nome:</strong> <input id="nome" type="text" class="nome" name="nome" placeholder="Atualize seu nome"></input></label>
+                                <label><strong>CPF:</strong> <span id="cpf"></span></label>
+                                <label><strong>Número de telefone::</strong> <input id="telefone" type="text" class="telefone" name="telefone" placeholder="Atualize seu telefone"></label>
+                                <label><strong>Endereço:</strong> <input id="endereco" type="text" class="endereco" name="endereco" placeholder="Atualize seu telefone"></label>
+                                <button class="btn-login">Cadastre</button>
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
+                
             </div>
          </div>
     </div>
