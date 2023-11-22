@@ -1,14 +1,153 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    user-select: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
-header .topo {
-    background-color: red;
-    position: relative;
+:root {
+    --cor-primaria: #9800ce;
+    --cor-secundaria: #2a2f43ea;
+    --cor-fundo: #f5f5f5;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    min-height: 90vh;
+    padding: 5vh;
+    background: rgb(233, 233, 89);
+}
+
+.carrinho {
+    width: 600px;
+    height: min-content;
+    background: black;
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.carrinho .cabeçalho-carrinho {
+    display: flex;
+}
+
+.carrinho .cabeçalho-carrinho button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    line-height: 50%;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.carrinho .cabeçalho-carrinho button:hover {
+    color: black;
+    background: #767e9df1;
+
+}
+
+.carrinho .cabeçalho-carrinho h3 {
+    margin: auto;
+    text-align: center;
+    font: 400 1.25rem 'Poppins';
+    color: yellow;
+}
+
+.carrinho .carrinho-item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 18px #2a2f430f;
+}
+
+.carrinho .carrinho-item .imagem {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+
+.carrinho .carrinho-item img {
+    width: 90%;
+}
+
+.carrinho .carrinho-item .info {
+    background: white;
+    width: 70%;
+    padding: 14px;
+}
+
+.carrinho .carrinho-item h4 {
+    color: black;
+    font: 700 1.25rem 'Poppins';
+}
+
+.carrinho .carrinho-item .detalhes {
+    display: flex;
+    gap: 10px;
+
+}
+
+.carrinho .carrinho-item .detalhes i {
+    font-size: 1.0625rem;
+    color: #2a2f43d2;
+    transform: translateY(3px);
+}
+
+.carrinho .carrinho-item .detalhes span {
+    font: 600 0.5rem 'Poppins';
+    color: #2a204399;
+}
+
+.carrinho .carrinho-item .preço {
+    color: black;
+    font: 700 1.125rem 'Poppins';
+    margin-top: 8px;
+}
+
+
+.modelsInfo {
+    display: inline-flex;
+    background-color: #EEE;
+    border-radius: 10px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+
+.modelsInfo button {
+    border: 0;
+    background-color: transparent;
+    font-size: 17px;
+    outline: 0;
+    cursor: pointer;
+    padding: 0px 10px;
+    color: #333;
+}
+
+.carrinho .pedido {
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .pedido:hover {
+    background: #767e9df1;
 }

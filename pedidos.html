@@ -5,18 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itens no Carrinho</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style-itens-carrinho.css">
 </head>
 
 <body>
-    <header>
-        <div class="topo">
-            <h1>Itens no Carrinho</h1>
+    <div class="carrinho">
+        <div class="cabeçalho-carrinho">
+
+            <a href="index.html"><button>
+                    <i class="bx bx-chevron-left"></i>
+                </button></a>
+
+            <h3>Itens no Carrinho</h3>
         </div>
-    </header>
+        <ul id="list">
 
+            <li class="carrinho-item">
 
+                <div class="imagem">
+                    <img src="./img/camarao-rosa.jpg" alt="...">
+                </div>
 
+                <div class="info">
+                    <h4>Camarão Rosa</h4>
+
+                    <div class="detalhes">
+
+                        <div class="tempo">
+                            <i class="bx bxs-timer"></i>
+                            <span>15 min</span>
+                        </div>
+
+                        <div class="status">
+                            <i class="bx bxs-package"></i>
+                            <span>Pronto</span>
+                        </div>
+                    </div>
+
+                    <div class="preço">
+                        <p>R$00,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <button class="pedido">Finalizar Pedido</button>
+    </div>
+
+    <script type="text/javascript" src="./js/carrinho.js"></script>
 </body>
 
 </html>

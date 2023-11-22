@@ -340,9 +340,20 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
         }
     });
 }
+console.log(carrinhoCongelados.value)
 
-//////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
-// let valorTotal = carrinhoPescados + carrinhoFrutosDoMar + carrinhoSalmoes
-//     + carrinhoCamarao + carrinhoFrescos + carrinhoCongelados;
-// console.log(valorTotal)
+
+// let retornoItens = [productsPescados, productsFrutosDoMar, productsSalmoes,
+//     productsCamaroes, productsFrescos, productsCongelados];
+
+// let lista = document.createElement("ul");
+// for (let retornoItem of retornoItens) {
+//     for (let produto of retornoItem) {
+//         let item = document.createElement("li");
+//         item.textContent = `ID: ${produto.id}, Nome: ${produto.name}, Valor: ${produto.price}, Quantidade: ${produto.quantity}`;
+//         lista.appendChild(item);
+//     }
+// }
+// document.body.appendChild(lista); // insere a lista no corpo do documento
