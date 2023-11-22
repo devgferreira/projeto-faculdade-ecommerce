@@ -1,10 +1,12 @@
 package br.bellifish.loja.apresentation;
 
+import br.bellifish.loja.application.dtos.AtualizarUsuarioDTORequest;
 import br.bellifish.loja.application.dtos.LoginDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import br.bellifish.loja.application.interfaces.IUsuarioService;
 import br.bellifish.loja.domain.model.payload.LoginMessage;
+import br.bellifish.loja.domain.model.user.response.AtualizarUsuarioResponse;
 import br.bellifish.loja.domain.model.user.response.BuscarUsuarioPorCpfResponse;
 import br.bellifish.loja.domain.model.user.response.UsuarioCriadoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +43,11 @@ public class UsuarioController {
     public ResponseEntity<LoginMessage> login(@RequestBody LoginDTO loginDTO) {
         LoginMessage loginResponse = _usuarioInterface.login(loginDTO);
         return ResponseEntity.ok(loginResponse);
+    }
+    @PutMapping("/{usuarioCpf}")
+    public ResponseEntity<AtualizarUsuarioResponse> atualizarDados(@PathVariable String usuarioCpf, @RequestBody AtualizarUsuarioDTORequest usuarioDTORequest) {
+        AtualizarUsuarioDTORequest usuarioAtualizado = _usuarioInterface.atualizarUsuario(usuarioCpf, usuarioDTORequest);
+        AtualizarUsuarioResponse usuarioResponse = new AtualizarUsuarioResponse(usuarioAtualizado);
+        return ResponseEntity.ok(usuarioResponse);
     }
 }
