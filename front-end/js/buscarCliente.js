@@ -1,4 +1,5 @@
 const resultado = document.getElementById("resultado")
+const formulario = document.querySelector("form")
 var cpfNaURL = obterParametroDaURL('cpf');
 
 const buscarCliente = (function() {
@@ -8,22 +9,17 @@ const buscarCliente = (function() {
         fetch('http://localhost:8080/usuarios/' + cpf)
             .then(response => response.json())
             .then(data => {
-                resultado.innerHTML = `
-                    <div class="textfield">
-                    <label><strong>Nome:</strong> ${data.nome}</label>
-                    <label><strong>CPF:</strong> ${data.cpf}</label>
-                    <label><strong>Email:</strong> ${data.email}</label>
-                    <label><strong>Número de telefone::</strong> ${data.telefone}</label>
-                    <label><strong>Endereço:</strong> ${data.endereco}</label>
-                    </div>
-                `;
+                document.getElementById('nome').value = data.nome;
+                document.getElementById('cpf').textContent = data.cpf;
+                document.getElementById('telefone').value = data.telefone;
+                document.getElementById('endereco').value = data.endereco;
+                
             })
             .catch(error => console.error('Erro ao buscar cliente:', error));
     }
 
     return function(cpf) {
         cpfNaURL = cpf;
-
         buscarClienteInternamente(cpf);
     };
 })();
@@ -31,6 +27,11 @@ const buscarCliente = (function() {
 document.addEventListener('DOMContentLoaded', function() {
     buscarCliente(cpfNaURL);
 });
+
+formulario.addEventListener('submit', function (event){
+    event.preventDefault();
+});
+
 
 function obterParametroDaURL(nomeParametro) {
     var urlSearchParams = new URLSearchParams(window.location.search);

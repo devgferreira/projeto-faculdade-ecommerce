@@ -1,5 +1,3 @@
-import buscarClientes from './buscarCliente.js';
-
 
 const formulario = document.querySelector("form");
 const icpf = document.querySelector(".cpf");
@@ -29,7 +27,6 @@ function login(){
                 return alert("CPF ou Senha invalidos")
             }else{
                 alert("Login feito com sucesso")
-                buscarClientes(icpf.value)
                 window.location.href = "dados-clientes.html?cpf=" + encodeURIComponent(icpf.value);
                 limpar();
             }
