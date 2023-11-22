@@ -136,7 +136,7 @@ body {
     color: #333;
 }
 
-.carrinho .Adicionar {
+.carrinho .adicionar1 {
     font: 500 1rem 'Poppins';
     cursor: pointer;
     width: 100%;
@@ -148,6 +148,86 @@ body {
     transition: .3s;
 }
 
-.carrinho .Adicionar:hover {
+.carrinho .adicionar1:hover {
+    background: #767e9df1;
+}
+
+.carrinho .adicionar2 {
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .adicionar2:hover {
+    background: #767e9df1;
+}
+
+.carrinho .adicionar3 {
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .adicionar3:hover {
+    background: #767e9df1;
+}
+
+.carrinho .adicionar4 {
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .adicionar4:hover {
+    background: #767e9df1;
+}
+
+.carrinho .adicionar5 {
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .adicionar5:hover {
+    background: #767e9df1;
+}
+
+.carrinho .adicionar6 {
+    font: 500 1rem 'Poppins';
+    cursor: pointer;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    color: black;
+    background: yellow;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.carrinho .adicionar6:hover {
     background: #767e9df1;
 }
