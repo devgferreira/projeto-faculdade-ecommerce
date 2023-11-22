@@ -213,4 +213,4 @@ for (let i = 0; i < plusButton.length; i++) {
 
 document.addEventListener('mouseup', () => clearInterval(intervalId))
 
-let carrinho = document.getElementsByClassName('Adicionar');
+let carrinhoSalmoes = document.getElementsByClassName('Adicionar');
