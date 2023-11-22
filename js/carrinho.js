@@ -1,5 +1,5 @@
 
-let prodcuts = [
+let products = [
     {
         id: 1,
         name: "Tilápia",
@@ -74,21 +74,24 @@ let prodcuts = [
         id: 11,
         name: "Salmão Temperado",
         images: "salmao-temperado.jpg",
-        price: 120.00
+        price: 120.00,
+        quantity: 0
 
     },
     {
         id: 12,
         name: "Lombo de Salmão",
         images: "lombo-de-salmao.jpg",
-        price: 180.00
+        price: 180.00,
+        quantity: 0
 
     },
     {
         id: 13,
         name: "Salmão Premium Chileno",
         images: "salmao-premium.jpg",
-        price: 250.00
+        price: 250.00,
+        quantity: 0
 
     },
     {
@@ -214,3 +217,15 @@ for (let i = 0; i < plusButton.length; i++) {
 document.addEventListener('mouseup', () => clearInterval(intervalId))
 
 let carrinhoSalmoes = document.getElementsByClassName('Adicionar');
+
+for (let i = 0; i < carrinhoSalmoes.length; i++) {
+    carrinhoSalmoes[i].addEventListener('click', () => {
+        for (let j = 0; j < value.length; j++) {
+            products[j].quantity = parseInt(value[j].innerHTML);
+
+            if (products[j].quantity > 0) {
+                console.log(products[j])
+            }
+        }
+    });
+}
