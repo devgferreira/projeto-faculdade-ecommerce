@@ -46,6 +46,7 @@ public class UsuarioService implements IUsuarioService {
         usuario.setNome(usuarioDTORequest.getNome());
         usuario.setEndereco(usuarioDTORequest.getEndereco());
         usuario.setTelefone(usuarioDTORequest.getTelefone());
+        usuario.setEmail(usuarioDTORequest.getEmail());
         _userRepository.save(usuario);
         return usuarioDTORequest;
     }
