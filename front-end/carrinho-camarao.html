@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
+    <title>Camarões</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,12 @@
 <body>
     <div class="carrinho">
         <div class="cabeçalho-carrinho">
-            <button>
-                <i class="bx bx-chevron-left"></i>
-            </button>
-            <h3>Camarrões</h3>
+
+            <a href="index.html"><button>
+                    <i class="bx bx-chevron-left"></i>
+                </button></a>
+
+            <h3>Camarões</h3>
         </div>
         <ul>
 
@@ -45,11 +47,12 @@
                     </div>
 
                     <div class="preço">
-                        <p>R$25,50</p>
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+                        <p>R$65,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -79,11 +82,12 @@
                     </div>
 
                     <div class="preço">
-                        <p>R$25,50</p>
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+                        <p>R$58,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -110,11 +114,12 @@
                         </div>
                     </div>
                     <div class="preço">
-                        <p>R$30,50</p>
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+                        <p>R$75,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -142,12 +147,13 @@
                     </div>
 
                     <div class="preço">
-                        <p>R$25,50</p>
+                        <p>R$95,00</p>
 
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -155,10 +161,11 @@
             </li>
 
         </ul>
-        <button class="pagar">Pagar R$30,50</button>
+        <button class="adicionar4" onclick="location.href='/index.html';">Adicionar ao Carrinho</button>
+
     </div>
 
-    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/carrinho.js"></script>
 </body>
 
 </html>

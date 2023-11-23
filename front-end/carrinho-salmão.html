@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
+    <title>Salmões</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +15,11 @@
 <body>
     <div class="carrinho">
         <div class="cabeçalho-carrinho">
-            <button>
-                <i class="bx bx-chevron-left"></i>
-            </button>
+
+            <a href="index.html"><button>
+                    <i class="bx bx-chevron-left"></i>
+                </button></a>
+
             <h3>Salmões</h3>
         </div>
         <ul>
@@ -44,11 +46,12 @@
                     </div>
 
                     <div class="preço">
-                        <p>R$25,50</p>
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+                        <p>R$120,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -74,12 +77,16 @@
                             <span>Pronto</span>
                         </div>
                     </div>
+
                     <div class="preço">
-                        <p>R$30,50</p>
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+
+                        <p>R$180,00</p>
+
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -105,12 +112,16 @@
                             <span>Pronto</span>
                         </div>
                     </div>
+
                     <div class="preço">
-                        <p>R$25,50</p>
-                        <div class="contador">
-                            <i class="bx bx-minus"></i>
-                            <span>1</span>
-                            <i class="bx bx-plus"></i>
+
+                        <p>R$250,00</p>
+
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
                         </div>
 
                     </div>
@@ -118,8 +129,10 @@
             </li>
 
         </ul>
-        <button class="pagar">Pagar R$30,50</button>
+        <button class="adicionar3" onclick="location.href='/index.html';">Adicionar ao Carrinho</button>
+
     </div>
+    <script src="./js/carrinho.js"></script>
 
 </body>
 

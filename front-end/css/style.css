@@ -36,7 +36,7 @@ body {
 .menu-2 div {
     display: flex;
     height: 60px;
-    width: 16.5%;
+    width: 16.5vw;
     font-size: 20px;
     text-align: center;
     align-items: center;
@@ -78,11 +78,28 @@ a:active {
 
 .redes-sociais ul li {
     display: inline-block;
-    width: 1%;
+    width: 1vw;
     padding: 30px;
     float: right;
 }
 
+
+.redes-sociais .quantity {
+    position: absolute;
+    width: 60px;
+    top: 2vh;
+    padding: 3px 10px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 
 nav {
@@ -222,4 +239,11 @@ li.slick-active button {
 .slick-dots li {
     padding-left: 5px;
     display: inline-block;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .menu-2 a {
+        font-size: 10px;
+    }
 }
