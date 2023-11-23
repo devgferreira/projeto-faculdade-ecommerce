@@ -22,10 +22,12 @@ function login(){
         .then(res => res.json()) 
         .then(data => {
             let status = data.status
-
+            
+            
             if(!status){
                 return alert("CPF ou Senha invalidos")
             }else{
+                localStorage.setItem('sessionToken', data.status);
                 alert("Login feito com sucesso")
                 window.location.href = "dados-clientes.html?cpf=" + encodeURIComponent(icpf.value);
                 limpar();

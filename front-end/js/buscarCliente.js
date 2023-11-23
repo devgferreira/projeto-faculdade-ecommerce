@@ -9,13 +9,13 @@ const buscarCliente = (function() {
         fetch('http://localhost:8080/usuarios/' + cpf)
             .then(response => response.json())
             .then(data => {
+                localStorage.setItem('cpf', data.cpf);
                 document.getElementById('nome').value = data.nome;
                 document.getElementById('cpf').value = data.cpf;
                 document.getElementById('telefone').value = data.telefone;
                 document.getElementById('endereco').value = data.endereco;
                 document.getElementById('email').value = data.email;
                 document.getElementById('aniversario').value = data.aniversario;
-                
             })
             .catch(error => console.error('Erro ao buscar cliente:', error));
     }

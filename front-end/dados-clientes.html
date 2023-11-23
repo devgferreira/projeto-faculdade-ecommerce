@@ -6,6 +6,7 @@
     <link href="./css/style-dados-clientes.css" rel="stylesheet">
     <script type="module" src="/js/buscarCliente.js" ></script>
     <script type="module" src="/js/atualizarDadosCliente.js" defer></script>
+    <script type="module" src="/js/logout.js" defer></script>
     <title>Sua Página</title>
 </head>
 <body>
@@ -72,9 +73,27 @@
             </label>
             
             
-            <button class="btn-login">ATUALIZAR</button>
+            <button class="btn-login">Atualizar</button>
         </form>
+
+        <button id="logoutButton" class="btn-login">Logout</button>
     </main>  
+
+    <script>
+        const botao = document.querySelector("#logoutButton");
+        
+        function sair(){
+            localStorage.clear();
+            window.location.href = "index.html"
+        }
+        
+        botao.addEventListener('click', function (event){
+            event.preventDefault();
+            sair();
+        });
+        </script>
+
 </body>
+
 </html>
 

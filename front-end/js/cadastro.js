@@ -49,9 +49,10 @@ function limpar(){
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
     if(isenha.value == isenhaConfirmada.value){
-    window.location.href = "dados-clientes.html?cpf=" + encodeURIComponent(icpf.value);
-    cadastrar();
-    limpar()
+        alert("Cadastro feito com sucesso")
+        cadastrar();
+        limpar()
+        window.location.href = "index.html";
     } else{
         alert("A senha não são compativeis")
     }
