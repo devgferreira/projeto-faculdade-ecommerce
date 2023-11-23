@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/style-dados-clientes.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="module" src="/js/buscarCliente.js" ></script>
     <script type="module" src="/js/atualizarDadosCliente.js" defer></script>
     <title>Sua Página</title>
@@ -14,7 +16,7 @@
         <div class="header-1">
 
             <div class="logo">
-                <img src="./img/logoBellifish.png" alt="Image" height="80px" width="100px" />
+               <a href="index.html"><img src="./img/logoBellifish.png" alt="Image" height="80px" width="100px" /></a> 
             </div>
 
             <div class="redes-sociais">
@@ -45,6 +47,7 @@
             <h1 class="b">Meu perfil</h1>
             <div class="c">Gerenciar e proteger sua conta</div>
         </div>
+
         <div class="main-dados">
         
             <div class="right-dados">
@@ -54,17 +57,37 @@
                        
                         <div id="resultado">
                             <div class="textfield">
-                                <label><strong>Nome:</strong> <input id="nome" type="text" class="nome" name="nome" placeholder="Atualize seu nome"></input></label>
-                                <label><strong>CPF:</strong> <span id="cpf"></span></label>
-                                <label><strong>Número de telefone::</strong> <input id="telefone" type="text" class="telefone" name="telefone" placeholder="Atualize seu telefone"></label>
-                                <label><strong>Endereço:</strong> <input id="endereco" type="text" class="endereco" name="endereco" placeholder="Atualize seu telefone"></label>
-                                <button class="btn-login">Cadastre</button>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">Nome: </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="nome" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">Cpf: </span>
+                                    </div>
+                                    <input type="disable" id="cpf" class="form-control" placeholder="CPF" aria-label="CPF" aria-describedby="basic-addon1" disabled="">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">Telefone: </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="telefone" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">Endereço: </span>
+                                    </div>
+                                    <input id="endereco" type="text" class="form-control" placeholder="Endereço" aria-label="Endereço" aria-describedby="basic-addon1">
+                                  </div>
+                                <div style="display: flex; justify-content: center; align-items: center;">
+                                    <button type="button"  class="btn btn-warning">Atualizar</button>
+                                </div>
                             </div>
-
                         </div>
                     </form>
                 </div>
-                
             </div>
          </div>
     </div>
