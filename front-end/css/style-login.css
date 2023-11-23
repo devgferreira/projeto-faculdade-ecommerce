@@ -160,6 +160,7 @@ body {
 .btn-cadastro {
     background: rgb(233, 233, 89);
     cursor: pointer;
+    color: #2b134b;
     transition: .3s;
     border-radius: 5px;
 }
