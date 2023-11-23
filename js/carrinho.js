@@ -199,7 +199,7 @@ let productsFrescos = [{
 
 let productsCongelados = [{
     id: 23,
-    name: "Tilápia",
+    name: "Tilápia Congelada",
     images: "tilapia-congelada.png",
     price: 42.00,
     quantity: 0
@@ -207,7 +207,7 @@ let productsCongelados = [{
 },
 {
     id: 24,
-    name: "Bacalhau",
+    name: "Bacalhau Congelado",
     images: "bacalhau-congelado.png",
     price: 75.00,
     quantity: 0
@@ -215,7 +215,7 @@ let productsCongelados = [{
 },
 {
     id: 25,
-    name: "Cação",
+    name: "Cação Congelado",
     images: "cação-congelado.jpg",
     price: 35.00,
     quantity: 0
@@ -223,7 +223,7 @@ let productsCongelados = [{
 },
 {
     id: 26,
-    name: "File de Atum",
+    name: "File de Atum Congelado",
     images: "file-atum-congelado.jpg",
     price: 85.00,
     quantity: 0
@@ -232,7 +232,7 @@ let productsCongelados = [{
 
 {
     id: 27,
-    name: "Sardinha",
+    name: "Sardinha Congelada",
     images: "sardinha-congelada.jpg",
     price: 14.00,
     quantity: 0
