@@ -13,6 +13,8 @@ const buscarCliente = (function() {
                 document.getElementById('cpf').value = data.cpf;
                 document.getElementById('telefone').value = data.telefone;
                 document.getElementById('endereco').value = data.endereco;
+                document.getElementById('email').value = data.email;
+                document.getElementById('aniversario').value = data.aniversario;
                 
             })
             .catch(error => console.error('Erro ao buscar cliente:', error));
