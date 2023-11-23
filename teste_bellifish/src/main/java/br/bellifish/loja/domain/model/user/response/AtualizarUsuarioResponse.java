@@ -6,17 +6,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class AtualizarUsuarioResponse {
     private String nome;
     private String endereco;
+    private String email;
     private Long telefone;
 
     public AtualizarUsuarioResponse(AtualizarUsuarioDTORequest usuario) {
         nome = usuario.getNome();
         telefone = usuario.getTelefone();
         endereco = usuario.getEndereco();
+        email = usuario.getEmail();
     }
 }

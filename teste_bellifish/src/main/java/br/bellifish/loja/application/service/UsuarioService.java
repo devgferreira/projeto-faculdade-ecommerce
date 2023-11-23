@@ -33,6 +33,9 @@ public class UsuarioService implements IUsuarioService {
     public UsuarioDTORequest criarUsuario(UsuarioDTORequest usuarioDTO) {
         String senha = passwordEncoder.encode(usuarioDTO.getSenha());
         Usuario usuario = _modelMapper.map(usuarioDTO, Usuario.class);
+        if(_userRepository.findByCpf(usuarioDTO.getCpf()) != null){
+            throw new RuntimeException("Usuario já existe");
+        }
         usuario.setSenha(senha);
         return _modelMapper.map(_userRepository.save(usuario), UsuarioDTORequest.class);
     }
@@ -42,9 +45,7 @@ public class UsuarioService implements IUsuarioService {
         Usuario usuario = _userRepository.findByCpf(usuarioCpf);
         usuario.setNome(usuarioDTORequest.getNome());
         usuario.setEndereco(usuarioDTORequest.getEndereco());
-        if(usuarioDTORequest.getTelefone() != 0){
-            usuario.setTelefone(usuarioDTORequest.getTelefone());
-        }
+        usuario.setTelefone(usuarioDTORequest.getTelefone());
         _userRepository.save(usuario);
         return usuarioDTORequest;
     }

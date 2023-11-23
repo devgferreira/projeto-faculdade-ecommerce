@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -20,6 +22,7 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String endereco;
+    private String email;
     private String aniversario;
     private Long telefone;
     private String senha;

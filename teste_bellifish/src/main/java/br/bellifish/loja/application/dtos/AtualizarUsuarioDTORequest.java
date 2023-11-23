@@ -10,5 +10,7 @@ import lombok.NoArgsConstructor;
 public class AtualizarUsuarioDTORequest {
     private String nome;
     private Long telefone;
+    private String email;
     private String endereco;
+
 }

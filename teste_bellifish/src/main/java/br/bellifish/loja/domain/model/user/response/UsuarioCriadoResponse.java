@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +14,8 @@ public class UsuarioCriadoResponse {
     private String nome;
     private String cpf;
     private Long telefone;
+    private String email;
+    private String aniversario;
     private String endereco;
 
     public UsuarioCriadoResponse(UsuarioDTORequest usuario) {
@@ -19,5 +23,7 @@ public class UsuarioCriadoResponse {
         cpf = usuario.getCpf();
         telefone = usuario.getTelefone();
         endereco = usuario.getEndereco();
+        email = usuario.getEmail();
+        aniversario = usuario.getAniversario();
     }
 }
