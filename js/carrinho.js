@@ -363,71 +363,32 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-let lista = document.createElement("ul");
-let valorTotal = 0;
-for (let itemCarrinho of carrinhoGlobal) {
-    let item = document.createElement("li");
-    item.textContent =
-        `
-             ID: ${itemCarrinho.id},
-          Nome: ${itemCarrinho.name},
-           Valor: ${itemCarrinho.price},
-            Quantidade: ${itemCarrinho.quantity}`;
-    lista.appendChild(item);
+// Verifica se a URL da página atual é a página index.html
+if (window.location.pathname == '/index-pedidos.html') {
+    let lista = document.createElement("ul");
+    let valorTotal = 0;
+    for (let itemCarrinho of carrinhoGlobal) {
+        let item = document.createElement("li");
+        item.textContent =
+            `
+                 ID: ${itemCarrinho.id},
+              Nome: ${itemCarrinho.name},
+               Valor: ${itemCarrinho.price},
+                Quantidade: ${itemCarrinho.quantity}`;
+        lista.appendChild(item);
 
-    // Calcula o valor total
-    valorTotal += itemCarrinho.price * itemCarrinho.quantity;
+        // Calcula o valor total
+        valorTotal += itemCarrinho.price * itemCarrinho.quantity;
+    }
+
+    let carrinho = document.querySelector('.carrinho');
+
+    carrinho.appendChild(lista);
+
+    let botao = document.createElement("button");
+    // Formata o valor total com duas casas decimais e substitui o ponto por uma vírgula
+    botao.textContent = `Finalizar Pedido - Valor Total: ${valorTotal.toFixed(2).replace('.', ',')}`;
+    botao.className = "pedido";
+
+    carrinho.appendChild(botao);
 }
-
-let carrinho = document.querySelector('.carrinho');
-
-carrinho.appendChild(lista);
-
-let botao = document.createElement("button");
-// Formata o valor total com duas casas decimais e substitui o ponto por uma vírgula
-botao.textContent = `Finalizar Pedido - Valor Total: ${valorTotal.toFixed(2).replace('.', ',')}`;
-botao.className = "pedido";
-
-carrinho.appendChild(botao);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let retornoItens = carrinhoGlobal;
-// console.log(retornoItens)
-// console.log(typeof retornoItens)
-// [productsPescados, productsFrutosDoMar, productsSalmoes,
-//     productsCamaroes, productsFrescos, productsCongelados];
-
-// let lista = document.createElement("ul");
-// for (let i in carrinhoGlobal) {
-//     // console.log(carrinhoGlobal[i])
-//     // for (let i of retornoItem) {
-//     let item = document.createElement("li");
-//     item.textContent =
-//         `
-//              ID: ${carrinhoGlobal[i].id},
-//           Nome: ${carrinhoGlobal[i].name},
-//            Valor: ${carrinhoGlobal[i].price},
-//             Quantidade: ${carrinhoGlobal[i].quantity}`;
-//     lista.appendChild(item);
-//     // }
-// }
-// document.body.appendChild(lista); // insere a lista no corpo do documento
