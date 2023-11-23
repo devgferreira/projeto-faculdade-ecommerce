@@ -40,7 +40,11 @@ function limpar(){
     icpf.value = "";
 };
 
+document.getElementById("botão").addEventListener('click', function(){
+    login();
+})
+
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
-        login();
+    
 });

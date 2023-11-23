@@ -1,20 +1,18 @@
 const formulario = document.querySelector("form");
 const botao = document.querySelector("button");
-const inome = document.querySelector(".nome");
-const isenha = document.querySelector(".senha");
-const isenhaConfirmada = document.querySelector(".senhaConfirmada");
-const itelefone = document.querySelector(".telefone");
-const iendereco = document.querySelector(".endereco");
-const icpf = document.querySelector(".cpf");
+const inome = document.getElementById("nome");
+const iemail = document.getElementById("email");
+const isenha = document.getElementById("senha");
+const ianiversario =  document.getElementById("nascimento");
+const isenhaConfirmada = document.getElementById("senhaConfirmada");
+const itelefone = document.getElementById("telefone");
+const iendereco = document.getElementById("endereco");
+const icpf = document.getElementById("cpf");
 
-
-if(isenha == isenhaConfirmada){
-
-}
 
 function cadastrar(){
     
-    if(isenha.value == isenhaConfirmada.value){
+   
         fetch("http://localhost:8080/usuarios",
         {
             headers: {
@@ -24,23 +22,25 @@ function cadastrar(){
             method: "POST",
             body: JSON.stringify({
                 nome: inome.value,
+                email: iemail.value,
                 cpf: icpf.value,
+                aniversario: ianiversario.value,
                 telefone: itelefone.value,
                 endereco: iendereco.value,
+
                 senha: isenha.value,
             })
+
+
         })
         .then(function (res) { console.log(res)})
         .catch(function (res) {console.log(res)})
-    }else{
-        alert("A senha não são compativeis")
-    }
-    
-};
-
+}
 function limpar(){
     inome.value = "";
     isenha.value = "";
+    ianiversario.value = "",
+    iemail.value = "",
     isenhaConfirmada.value = "";
     itelefone.value = "";
     iendereco.value = "";
@@ -49,8 +49,13 @@ function limpar(){
 
 formulario.addEventListener('submit', function (event){
     event.preventDefault();
-    cadastrar();
     if(isenha.value == isenhaConfirmada.value){
-        limpar();
+    window.location.href = "dados-clientes.html?cpf=" + encodeURIComponent(icpf.value);
+    cadastrar();
+    limpar   
+    } else{
+        alert("A senha não são compativeis")
     }
+    
 });
+
