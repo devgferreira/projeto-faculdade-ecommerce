@@ -438,6 +438,7 @@ if (window.location.pathname == '/index-pedidos.html') {
     // Add an event listener to the button
     botao.addEventListener('click', function () {
         alert('Pedido realizado com sucesso!');
+        localStorage.setItem('carrinhoGlobal', JSON.stringify([]));
         window.location.href = 'index.html';
     });
 
