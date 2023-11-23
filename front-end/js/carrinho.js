@@ -1,19 +1,11 @@
 
 let carrinhoGlobal = [];
 
-// se não existir o carrinhoGlobal na storage
-// cria
 if (window.localStorage.getItem("carrinhoGlobal") == undefined) {
     window.localStorage.setItem("carrinhoGlobal", "");
 }
-// se não
-// carrega os valores do carrinho para a tela
 else {
-    // values
-    // tudo que tá na localStorage é string
-    // usar classe JSON com seus methods statics
     carrinhoGlobal = JSON.parse(window.localStorage.getItem("carrinhoGlobal") || "[]");
-    // carrinhoGlobal é um array
 }
 
 let productsPescados = [
@@ -416,6 +408,28 @@ if (quantityElement) {
 if (window.location.pathname == '/index-pedidos.html') {
     let lista = document.createElement("ul");
 
+    function cadastrar(){
+    
+   
+        fetch("http://localhost:8080/pedidos",
+        {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                nome: inome.value,
+                email: iemail.value,
+                cpf: icpf.value,
+                aniversario: ianiversario.value,
+            })
+
+
+        })
+        .then(function (res) { console.log(res)})
+        .catch(function (res) {console.log(res)})
+}
     // Agora, iteramos sobre os itens do carrinho para criar a lista
     for (let id in carrinho) {
         let item = document.createElement("li");
