@@ -360,20 +360,23 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
         }
     });
 }
-console.log(carrinhoCongelados.value)
 
 ///////////////////////////////////////////////////////////////////////////////
 
 let lista = document.createElement("ul");
-for (let i in carrinhoGlobal) {
+let valorTotal = 0;
+for (let itemCarrinho of carrinhoGlobal) {
     let item = document.createElement("li");
     item.textContent =
         `
-             ID: ${carrinhoGlobal[i].id},
-          Nome: ${carrinhoGlobal[i].name},
-           Valor: ${carrinhoGlobal[i].price},
-            Quantidade: ${carrinhoGlobal[i].quantity}`;
+             ID: ${itemCarrinho.id},
+          Nome: ${itemCarrinho.name},
+           Valor: ${itemCarrinho.price},
+            Quantidade: ${itemCarrinho.quantity}`;
     lista.appendChild(item);
+
+    // Calcula o valor total
+    valorTotal += itemCarrinho.price * itemCarrinho.quantity;
 }
 
 let carrinho = document.querySelector('.carrinho');
@@ -381,7 +384,8 @@ let carrinho = document.querySelector('.carrinho');
 carrinho.appendChild(lista);
 
 let botao = document.createElement("button");
-botao.textContent = "Finalizar Pedido";
+// Formata o valor total com duas casas decimais e substitui o ponto por uma vírgula
+botao.textContent = `Finalizar Pedido - Valor Total: ${valorTotal.toFixed(2).replace('.', ',')}`;
 botao.className = "pedido";
 
 carrinho.appendChild(botao);
