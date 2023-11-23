@@ -383,32 +383,44 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-// Verifica se a URL da página atual é a página index.html
 if (window.location.pathname == '/index-pedidos.html') {
     let lista = document.createElement("ul");
     let valorTotal = 0;
+    let carrinho = {};
+
     for (let itemCarrinho of carrinhoGlobal) {
+        // Se o item já existe no carrinho, apenas atualiza a quantidade
+        if (carrinho[itemCarrinho.id]) {
+            carrinho[itemCarrinho.id].quantity += itemCarrinho.quantity;
+        } else {
+            // Senão, adiciona o item ao carrinho
+            carrinho[itemCarrinho.id] = itemCarrinho;
+        }
+
+        // Calcula o valor total
+        valorTotal += carrinho[itemCarrinho.id].price * carrinho[itemCarrinho.id].quantity;
+    }
+
+    // Agora, iteramos sobre os itens do carrinho para criar a lista
+    for (let id in carrinho) {
         let item = document.createElement("li");
         item.textContent =
             `
-                ID: ${itemCarrinho.id},
-                Nome: ${itemCarrinho.name},
-                Valor: ${itemCarrinho.price},
-                Quantidade: ${itemCarrinho.quantity}`;
+                ID: ${carrinho[id].id},
+                Nome: ${carrinho[id].name},
+                Valor: ${carrinho[id].price},
+                Quantidade: ${carrinho[id].quantity}`;
         lista.appendChild(item);
-
-        // Calcula o valor total
-        valorTotal += itemCarrinho.price * itemCarrinho.quantity;
     }
 
-    let carrinho = document.querySelector('.carrinho');
+    let carrinhoElement = document.querySelector('.carrinho');
 
-    carrinho.appendChild(lista);
+    carrinhoElement.appendChild(lista);
 
     let botao = document.createElement("button");
     // Formata o valor total com duas casas decimais e substitui o ponto por uma vírgula
     botao.textContent = `Finalizar Pedido - Valor Total: ${valorTotal.toFixed(2).replace('.', ',')}`;
     botao.className = "pedido";
 
-    carrinho.appendChild(botao);
+    carrinhoElement.appendChild(botao);
 }
