@@ -10,7 +10,7 @@ const buscarCliente = (function() {
             .then(response => response.json())
             .then(data => {
                 document.getElementById('nome').value = data.nome;
-                document.getElementById('cpf').textContent = data.cpf;
+                document.getElementById('cpf').value = data.cpf;
                 document.getElementById('telefone').value = data.telefone;
                 document.getElementById('endereco').value = data.endereco;
                 

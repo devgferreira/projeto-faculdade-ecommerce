@@ -1,8 +1,8 @@
-var cpfNaURL = sessionStorage.getItem('cpf');
+var cpfNaURL = obterParametroDaURL('cpf');
 const formulario = document.querySelector("form");
-const inome = document.querySelector(".nome");
-const itelefone = document.querySelector(".telefone");
-const iendereco = document.querySelector(".endereco");
+const inome = document.getElementById("nome");
+const itelefone = document.getElementById("telefone");
+const iendereco = document.getElementById("endereco");
 function ataualizarDadosCliente(){
    
     fetch("http://localhost:8080/usuarios/" + cpfNaURL,
@@ -25,5 +25,10 @@ formulario.addEventListener('submit', function (event){
     ataualizarDadosCliente();
     alert("Atualização feita com sucesso")
 });
+
+function obterParametroDaURL(nomeParametro) {
+    var urlSearchParams = new URLSearchParams(window.location.search);
+    return urlSearchParams.get(nomeParametro);
+}
 
 export default ataualizarDadosCliente
