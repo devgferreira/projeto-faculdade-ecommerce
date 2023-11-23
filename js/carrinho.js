@@ -385,6 +385,7 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
 if (window.location.pathname == '/index-pedidos.html') {
     let lista = document.createElement("ul");
     let valorTotal = 0;
+    let quantidadeTotal = 0; // Adicionado
     let carrinho = {};
 
     for (let itemCarrinho of carrinhoGlobal) {
@@ -398,6 +399,9 @@ if (window.location.pathname == '/index-pedidos.html') {
 
         // Calcula o valor total
         valorTotal += carrinho[itemCarrinho.id].price * carrinho[itemCarrinho.id].quantity;
+
+        // Adiciona a quantidade do item atual ao total
+        quantidadeTotal += carrinho[itemCarrinho.id].quantity;
     }
 
     // Agora, iteramos sobre os itens do carrinho para criar a lista
@@ -422,4 +426,13 @@ if (window.location.pathname == '/index-pedidos.html') {
     botao.className = "pedido";
 
     carrinhoElement.appendChild(botao);
+
+    // Agora você pode usar 'quantidadeTotal' onde precisar
+    console.log(`Quantidade total de itens: ${quantidadeTotal}`);
+
 }
+
+
+
+///////////////////////////////////////////////////////////////////////
+
