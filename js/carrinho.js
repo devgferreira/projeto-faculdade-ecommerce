@@ -12,8 +12,7 @@ else {
     // values
     // tudo que tá na localStorage é string
     // usar classe JSON com seus methods statics
-    carrinhoGlobal =
-        JSON.parse(window.localStorage.getItem("carrinhoGlobal"));
+    carrinhoGlobal = JSON.parse(window.localStorage.getItem("carrinhoGlobal") || "[]");
     // carrinhoGlobal é um array
 }
 
