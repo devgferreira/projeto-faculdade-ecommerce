@@ -52,7 +52,7 @@ formulario.addEventListener('submit', function (event){
     if(isenha.value == isenhaConfirmada.value){
     window.location.href = "dados-clientes.html?cpf=" + encodeURIComponent(icpf.value);
     cadastrar();
-    limpar   
+    limpar()
     } else{
         alert("A senha não são compativeis")
     }
