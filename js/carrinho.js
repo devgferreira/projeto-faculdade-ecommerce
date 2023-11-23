@@ -382,27 +382,39 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
 
 ///////////////////////////////////////////////////////////////////////////////
 
+let valorTotal = 0;
+let quantidadeTotal = 0; // Adicionado
+let carrinho = {};
+
+for (let itemCarrinho of carrinhoGlobal) {
+
+    if (carrinho[itemCarrinho.id]) {
+        carrinho[itemCarrinho.id].quantity += itemCarrinho.quantity;
+    } else {
+        // Senão, adiciona o item ao carrinho
+        carrinho[itemCarrinho.id] = itemCarrinho;
+    }
+
+
+    valorTotal += carrinho[itemCarrinho.id].price * carrinho[itemCarrinho.id].quantity;
+
+
+    quantidadeTotal += carrinho[itemCarrinho.id].quantity;
+}
+
+
+console.log(`Quantidade total de itens: ${quantidadeTotal}`);
+
+// Obtenha o elemento com a classe "quantity"
+let quantityElement = document.querySelector('.quantity');
+
+
+if (quantityElement) {
+    quantityElement.textContent = quantidadeTotal;
+}
+
 if (window.location.pathname == '/index-pedidos.html') {
     let lista = document.createElement("ul");
-    let valorTotal = 0;
-    let quantidadeTotal = 0; // Adicionado
-    let carrinho = {};
-
-    for (let itemCarrinho of carrinhoGlobal) {
-        // Se o item já existe no carrinho, apenas atualiza a quantidade
-        if (carrinho[itemCarrinho.id]) {
-            carrinho[itemCarrinho.id].quantity += itemCarrinho.quantity;
-        } else {
-            // Senão, adiciona o item ao carrinho
-            carrinho[itemCarrinho.id] = itemCarrinho;
-        }
-
-        // Calcula o valor total
-        valorTotal += carrinho[itemCarrinho.id].price * carrinho[itemCarrinho.id].quantity;
-
-        // Adiciona a quantidade do item atual ao total
-        quantidadeTotal += carrinho[itemCarrinho.id].quantity;
-    }
 
     // Agora, iteramos sobre os itens do carrinho para criar a lista
     for (let id in carrinho) {
@@ -426,13 +438,4 @@ if (window.location.pathname == '/index-pedidos.html') {
     botao.className = "pedido";
 
     carrinhoElement.appendChild(botao);
-
-    // Agora você pode usar 'quantidadeTotal' onde precisar
-    console.log(`Quantidade total de itens: ${quantidadeTotal}`);
-
 }
-
-
-
-///////////////////////////////////////////////////////////////////////
-
