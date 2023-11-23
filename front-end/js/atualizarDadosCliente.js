@@ -3,6 +3,7 @@ const formulario = document.querySelector("form");
 const inome = document.getElementById("nome");
 const itelefone = document.getElementById("telefone");
 const iendereco = document.getElementById("endereco");
+const iemail = document.getElementById("email");
 function ataualizarDadosCliente(){
    
     fetch("http://localhost:8080/usuarios/" + cpfNaURL,
@@ -16,6 +17,7 @@ function ataualizarDadosCliente(){
                 nome: inome.value,
                 telefone: itelefone.value,
                 endereco: iendereco.value,
+                email: iemail.value,
             })
         })
         .catch(function (res) {console.log(res)})
