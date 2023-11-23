@@ -421,10 +421,9 @@ if (window.location.pathname == '/index-pedidos.html') {
         let item = document.createElement("li");
         item.textContent =
             `
-                ID: ${carrinho[id].id},
-                Nome: ${carrinho[id].name},
-                Valor: ${carrinho[id].price},
-                Quantidade: ${carrinho[id].quantity}`;
+                ${carrinho[id].name},
+                R$: ${carrinho[id].price},
+                Qt: ${carrinho[id].quantity}`;
         lista.appendChild(item);
     }
 
@@ -433,9 +432,14 @@ if (window.location.pathname == '/index-pedidos.html') {
     carrinhoElement.appendChild(lista);
 
     let botao = document.createElement("button");
-    // Formata o valor total com duas casas decimais e substitui o ponto por uma vírgula
     botao.textContent = `Finalizar Pedido - Valor Total: ${valorTotal.toFixed(2).replace('.', ',')}`;
     botao.className = "pedido";
+
+    // Add an event listener to the button
+    botao.addEventListener('click', function () {
+        alert('Pedido finalizado!');
+        window.location.href = 'index.html';
+    });
 
     carrinhoElement.appendChild(botao);
 }
