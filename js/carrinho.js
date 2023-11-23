@@ -1,4 +1,22 @@
 
+let carrinhoGlobal = [];
+
+// se não existir o carrinhoGlobal na storage
+// cria
+if (window.localStorage.getItem("carrinhoGlobal") == undefined) {
+    window.localStorage.setItem("carrinhoGlobal", "");
+}
+// se não
+// carrega os valores do carrinho para a tela
+else {
+    // values
+    // tudo que tá na localStorage é string
+    // usar classe JSON com seus methods statics
+    carrinhoGlobal =
+        JSON.parse(window.localStorage.getItem("carrinhoGlobal"));
+    // carrinhoGlobal é um array
+}
+
 let productsPescados = [
     {
         id: 1,
@@ -40,8 +58,6 @@ let productsPescados = [
         quantity: 0
 
     }]
-
-
 let productsFrutosDoMar = [{
     id: 6,
     name: "Caranguejo",
@@ -255,7 +271,11 @@ for (let i = 0; i < carrinhoPescados.length; i++) {
             productsPescados[j].quantity = parseInt(value[j].innerHTML);
 
             if (productsPescados[j].quantity > 0) {
-                console.log(productsPescados[j])
+                carrinhoGlobal.push(productsPescados[j])
+                window.localStorage.setItem("carrinhoGlobal",
+                    JSON.stringify(carrinhoGlobal)
+                    // JSON.stringify(productsPescados[j])
+                )
             }
         }
     });
@@ -344,16 +364,66 @@ console.log(carrinhoCongelados.value)
 
 ///////////////////////////////////////////////////////////////////////////////
 
+let lista = document.createElement("ul");
+for (let i in carrinhoGlobal) {
+    let item = document.createElement("li");
+    item.textContent =
+        `
+             ID: ${carrinhoGlobal[i].id},
+          Nome: ${carrinhoGlobal[i].name},
+           Valor: ${carrinhoGlobal[i].price},
+            Quantidade: ${carrinhoGlobal[i].quantity}`;
+    lista.appendChild(item);
+}
 
-// let retornoItens = [productsPescados, productsFrutosDoMar, productsSalmoes,
+let carrinho = document.querySelector('.carrinho');
+
+carrinho.appendChild(lista);
+
+let botao = document.createElement("button");
+botao.textContent = "Finalizar Pedido";
+botao.className = "pedido";
+
+carrinho.appendChild(botao);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let retornoItens = carrinhoGlobal;
+// console.log(retornoItens)
+// console.log(typeof retornoItens)
+// [productsPescados, productsFrutosDoMar, productsSalmoes,
 //     productsCamaroes, productsFrescos, productsCongelados];
 
 // let lista = document.createElement("ul");
-// for (let retornoItem of retornoItens) {
-//     for (let produto of retornoItem) {
-//         let item = document.createElement("li");
-//         item.textContent = `ID: ${produto.id}, Nome: ${produto.name}, Valor: ${produto.price}, Quantidade: ${produto.quantity}`;
-//         lista.appendChild(item);
-//     }
+// for (let i in carrinhoGlobal) {
+//     // console.log(carrinhoGlobal[i])
+//     // for (let i of retornoItem) {
+//     let item = document.createElement("li");
+//     item.textContent =
+//         `
+//              ID: ${carrinhoGlobal[i].id},
+//           Nome: ${carrinhoGlobal[i].name},
+//            Valor: ${carrinhoGlobal[i].price},
+//             Quantidade: ${carrinhoGlobal[i].quantity}`;
+//     lista.appendChild(item);
+//     // }
 // }
 // document.body.appendChild(lista); // insere a lista no corpo do documento

@@ -60,88 +60,11 @@ body {
     color: yellow;
 }
 
-.carrinho .carrinho-item {
-    position: relative;
-    display: flex;
-    width: 100%;
-    margin: 30px 0;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 18px #2a2f430f;
-}
-
-.carrinho .carrinho-item .imagem {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 30%;
-}
-
-.carrinho .carrinho-item img {
-    width: 90%;
-}
-
-.carrinho .carrinho-item .info {
-    background: white;
-    width: 70%;
-    padding: 14px;
-}
-
-.carrinho .carrinho-item h4 {
-    color: black;
-    font: 700 1.25rem 'Poppins';
-}
-
-.carrinho .carrinho-item .detalhes {
-    display: flex;
-    gap: 10px;
-
-}
-
-.carrinho .carrinho-item .detalhes i {
-    font-size: 1.0625rem;
-    color: #2a2f43d2;
-    transform: translateY(3px);
-}
-
-.carrinho .carrinho-item .detalhes span {
-    font: 600 0.5rem 'Poppins';
-    color: #2a204399;
-}
-
-.carrinho .carrinho-item .preço {
-    color: black;
-    font: 700 1.125rem 'Poppins';
-    margin-top: 8px;
-}
-
-
-.modelsInfo {
-    display: inline-flex;
-    background-color: #EEE;
-    border-radius: 10px;
-    height: 30px;
-    position: absolute;
-    right: 15px;
-    bottom: 0;
-}
-
-.modelsInfo button {
-    border: 0;
-    background-color: transparent;
-    font-size: 17px;
-    outline: 0;
-    cursor: pointer;
-    padding: 0px 10px;
-    color: #333;
-}
-
 .carrinho .pedido {
     font: 500 1rem 'Poppins';
     cursor: pointer;
     width: 100%;
     padding: 15px 0;
-    margin-top: 10px;
     color: black;
     background: yellow;
     border-radius: 8px;
@@ -150,4 +73,15 @@ body {
 
 .carrinho .pedido:hover {
     background: #767e9df1;
+}
+
+ul {
+    position: relative;
+    margin-top: 10px;
+    text-align: center;
+}
+
+li {
+    padding: 0.25rem;
+    color: white;
 }
