@@ -422,7 +422,7 @@ if (window.location.pathname == '/index-pedidos.html') {
         item.textContent =
             `
                 ${carrinho[id].name},
-                R$: ${carrinho[id].price},
+                R$: ${carrinho[id].price.toFixed(2)},
                 Qt: ${carrinho[id].quantity}`;
         lista.appendChild(item);
     }
