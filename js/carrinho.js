@@ -291,7 +291,11 @@ for (let i = 0; i < carrinhoFrutosDoMar.length; i++) {
             productsFrutosDoMar[j].quantity = parseInt(value[j].innerHTML);
 
             if (productsFrutosDoMar[j].quantity > 0) {
-                console.log(productsFrutosDoMar[j])
+                carrinhoGlobal.push(productsFrutosDoMar[j])
+                window.localStorage.setItem("carrinhoGlobal",
+                    JSON.stringify(carrinhoGlobal)
+                    // JSON.stringify(productsFrutosDoMar[j])
+                )
             }
         }
     });
@@ -307,7 +311,11 @@ for (let i = 0; i < carrinhoSalmoes.length; i++) {
             productsSalmoes[j].quantity = parseInt(value[j].innerHTML);
 
             if (productsSalmoes[j].quantity > 0) {
-                console.log(productsSalmoes[j])
+                carrinhoGlobal.push(productsSalmoes[j])
+                window.localStorage.setItem("carrinhoGlobal",
+                    JSON.stringify(carrinhoGlobal)
+                    // JSON.stringify(productsSalmoes[j])
+                )
             }
         }
     });
@@ -323,7 +331,11 @@ for (let i = 0; i < carrinhoCamarao.length; i++) {
             productsCamaroes[j].quantity = parseInt(value[j].innerHTML);
 
             if (productsCamaroes[j].quantity > 0) {
-                console.log(productsCamaroes[j])
+                carrinhoGlobal.push(productsCamaroes[j])
+                window.localStorage.setItem("carrinhoGlobal",
+                    JSON.stringify(carrinhoGlobal)
+                    // JSON.stringify(productsCamaroes[j])
+                )
             }
         }
     });
@@ -339,7 +351,11 @@ for (let i = 0; i < carrinhoFrescos.length; i++) {
             productsFrescos[j].quantity = parseInt(value[j].innerHTML);
 
             if (productsFrescos[j].quantity > 0) {
-                console.log(productsFrescos[j])
+                carrinhoGlobal.push(productsFrescos[j])
+                window.localStorage.setItem("carrinhoGlobal",
+                    JSON.stringify(carrinhoGlobal)
+                    // JSON.stringify(productsFrescos[j])
+                )
             }
         }
     });
@@ -355,7 +371,11 @@ for (let i = 0; i < carrinhoCongelados.length; i++) {
             productsCongelados[j].quantity = parseInt(value[j].innerHTML);
 
             if (productsCongelados[j].quantity > 0) {
-                console.log(productsCongelados[j])
+                carrinhoGlobal.push(productsCongelados[j])
+                window.localStorage.setItem("carrinhoGlobal",
+                    JSON.stringify(carrinhoGlobal)
+                    // JSON.stringify(productsCongelados[j])
+                )
             }
         }
     });
@@ -371,9 +391,9 @@ if (window.location.pathname == '/index-pedidos.html') {
         let item = document.createElement("li");
         item.textContent =
             `
-                 ID: ${itemCarrinho.id},
-              Nome: ${itemCarrinho.name},
-               Valor: ${itemCarrinho.price},
+                ID: ${itemCarrinho.id},
+                Nome: ${itemCarrinho.name},
+                Valor: ${itemCarrinho.price},
                 Quantidade: ${itemCarrinho.quantity}`;
         lista.appendChild(item);
 
