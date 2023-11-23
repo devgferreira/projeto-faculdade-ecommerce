@@ -1,25 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
+ 
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+a:link {
+    text-decoration: none;
+    color: black;
+}
 
+a:visited {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    color: black;
+}
+
+.logo {
+    margin-top: 8px;
+    float: left;
+    height: 0;
+    margin-left: 2%;
+
+}
+
+.redes-sociais ul li {
+    display: inline-block;
+    width: 1%;
+    padding: 30px;
+    float: right;
+}
+main{
+    
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+header{
+    width: 100vw;
+    height: 15%;
+    margin-top:-1.5%;
+}
+.menu-1 {
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    height: 100px;
+}
 body {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(233, 233, 89);
+    height: 100%;
+    background: rgb(245, 255, 53);
+    margin: 0;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .container {
-    width: 70%;
-    height: 80vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

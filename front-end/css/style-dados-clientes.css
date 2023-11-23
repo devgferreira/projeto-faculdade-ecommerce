@@ -3,22 +3,24 @@
 body {
     width: 100%;
     height: 100%;
-    background: rgb(233, 233, 89);
+    background: rgb(245, 255, 53);
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
 }
-
-
-
-.a {
-    padding: 1.125rem 0;
-    background: rgb(233, 233, 89);
+header{
+    width: 100vw;
+    height: 15%;
+    margin-top:-1.5%;
+}
+main{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
 }
 .b {
-    margin-top: .1875rem;
+    margin-top: 2%;
     color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
 }
 .c {
     margin: 0;
@@ -27,29 +29,16 @@ body {
     line-height: 1.5rem;
     text-transform: capitalize;
     color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .menu-1 {
     width: 100%;
+    height: 50%;
     background-color: black;
     height: 100px;
 }
-
-.menu-2 {
-    width: 100%;
-    background: rgb(233, 233, 89);
-
-    height: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-
 
 a:link {
     text-decoration: none;
@@ -73,6 +62,7 @@ a:active {
     margin-top: 8px;
     float: left;
     height: 0;
+    margin-left: 2%;
 
 }
 
@@ -84,57 +74,94 @@ a:active {
 }
 
 .main-dados {
-    width: 100vw;
+    width: 50%;
     background: rgb(233, 233, 89);
-    display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-
-.textfield {
-    width: auto;
-    display: flex;
+    text-align: center;
+    background-color: #000000;
+    color: white;
     flex-direction: column;
-    align-items:start;
-    justify-content: center;
-    margin: 10px 0px;
-}
-
-.textfield>label {
-    background: rgb(233, 233, 89);
-    margin-bottom: 20px;
-}
-
-
-
-.right-dados {
-    width: 80%;
-    height: 80%;
-    
-    display: flex;
-    align-items: center;
-}
-
-.card-dados {
-    width: 100%;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    padding: 30px 35px;
-    background: black;
     border-radius: 20px;
-    box-shadow: 0px 10px 40px white;
-}
-
-.card-dados>h1 {
-    background: rgb(233, 233, 89);
-    font-weight: 800;
-    margin: 0;
-    float: left;
+    margin-top: 3.5%;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.579);
 
 }
 
+
+.main-dados input{
+    margin: 2%;
+    border-radius: 10px;
+    margin-top: -5%;
+    
+    position: center;
+    text-indent: 20px;
+    font-size: 16px;
+}
+.main-dados strong{
+    font-weight: 100;
+}
+.labelcpf {
+    display: none;
+}
+.configlabel{
+    font-size: 18px;
+    flex-direction: row;
+    display: flex;
+    align-items: last baseline;
+    text-align: center; 
+    justify-content: center;
+    height: 40px;
+    margin: 7% 5%;
+    
+}
+#nome{
+    margin-left: 5%;
+}
+.btn-login{
+    background-color: rgb(233, 233, 89);
+    font-weight: 600;
+    color: #000000;
+    font-size: 15px;
+    width: 45%;
+    height: 50px;
+    margin-bottom: 7%;
+    border-radius: 9px;
+    box-shadow: none;
+}
+.btn-login:hover {
+    background: rgba(126, 126, 126, 0.76);
+    color: white;
+
+}
+.configlabel>input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    background: rgba(217, 217, 166, 0.697);
+    color: black;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.configlabel>input:hover {
+    
+    background: rgba(126, 126, 126, 0.76)
+}
+
+.configlabel>label {
+    
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.configlabel>input::placeholder {
+    
+    color: #f0ffff94;
+}
 
 @media only screen and (max-width: 600px) {
     .main-dados {
