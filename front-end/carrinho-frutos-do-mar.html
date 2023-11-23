@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutos do Mar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/carrinho.css">
+</head>
+
+<body>
+    <div class="carrinho">
+        <div class="cabeçalho-carrinho">
+
+            <a href="index.html"><button>
+                    <i class="bx bx-chevron-left"></i>
+                </button></a>
+
+            <h3>Frutos do Mar</h3>
+        </div>
+        <ul>
+            <li class="carrinho-item">
+
+                <div class="imagem">
+                    <img src="./img/caranguejo.jpg" alt="...">
+                </div>
+
+                <div class="info">
+                    <h4>Caranguejo</h4>
+
+                    <div class="detalhes">
+
+                        <div class="tempo">
+                            <i class="bx bxs-timer"></i>
+                            <span>15 min</span>
+                        </div>
+
+                        <div class="status">
+                            <i class="bx bxs-package"></i>
+                            <span>Pronto</span>
+                        </div>
+                    </div>
+
+                    <div class="preço">
+
+                        <p>R$60,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="carrinho-item">
+                <div class="imagem">
+                    <img src="./img/mexilhao.jpg" alt="...">
+                </div>
+
+                <div class="info">
+
+                    <h4>Mexilhões</h4>
+
+                    <div class="detalhes">
+                        <div class="tempo">
+                            <i class="bx bxs-timer"></i>
+                            <span>15 min</span>
+                        </div>
+
+                        <div class="status">
+                            <i class="bx bxs-package"></i>
+                            <span>Pronto</span>
+                        </div>
+                    </div>
+
+                    <div class="preço">
+
+                        <p>R$30,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="carrinho-item">
+                <div class="imagem">
+                    <img src="./img/polvo.jpg" alt="...">
+                </div>
+                <div class="info">
+                    <h4>Polvo</h4>
+
+                    <div class="detalhes">
+
+                        <div class="tempo">
+                            <i class="bx bxs-timer"></i>
+                            <span>15 min</span>
+                        </div>
+
+                        <div class="status">
+                            <i class="bx bxs-package"></i>
+                            <span>Pronto</span>
+                        </div>
+                    </div>
+                    <div class="preço">
+                        <p>R$75,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="carrinho-item">
+                <div class="imagem">
+                    <img src="./img/lagosta.jpg" alt="...">
+                </div>
+                <div class="info">
+                    <h4>Lagosta</h4>
+
+                    <div class="detalhes">
+
+                        <div class="tempo">
+                            <i class="bx bxs-timer"></i>
+                            <span>15 min</span>
+                        </div>
+
+                        <div class="status">
+                            <i class="bx bxs-package"></i>
+                            <span>Pronto</span>
+                        </div>
+                    </div>
+                    <div class="preço">
+                        <p>R$85,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li class="carrinho-item">
+                <div class="imagem">
+                    <img src="./img/lula.png" alt="...">
+                </div>
+                <div class="info">
+                    <h4>Lula</h4>
+
+                    <div class="detalhes">
+
+                        <div class="tempo">
+                            <i class="bx bxs-timer"></i>
+                            <span>15 min</span>
+                        </div>
+
+                        <div class="status">
+                            <i class="bx bxs-package"></i>
+                            <span>Pronto</span>
+                        </div>
+                    </div>
+                    <div class="preço">
+                        <p>R$50,00</p>
+
+                        <div class="modelsInfo">
+                            <button id="minus" class="modelsInfo-button">-</button>
+                            <span class="value">0</span>
+                            <button id="plus" class="plusButton">+</button>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <button class="adicionar2" onclick="location.href='/index.html';">Adicionar ao Carrinho</button>
+
+    </div>
+
+    <script src="./js/carrinho.js"></script>
+</body>
+
+</html>
