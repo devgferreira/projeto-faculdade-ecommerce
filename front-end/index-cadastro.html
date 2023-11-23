@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style-cadastro.css">
+    <script src="./js/cadastro.js" defer></script>
+    <title>Formulário</title>
+</head>
+
+<body>
+    <header> 
+        <div class="menu-1">
+
+            <div class="header-1">
+
+                <div class="logo">
+                  <a href="index.html"><img src="./img/logoBellifish.png" alt="Image" height="80px" width="100px" /></a>  
+                </div>
+
+                <div class="redes-sociais">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="./img/linkedin.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="./img/face.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index-login.html"><img src="./img/login.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="./img/carrinho-de-compras.png">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <div class="container">
+            <div class="form">
+                <form action="#">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastre-se</h1>
+                        </div>
+    
+                        <div class="login-button">
+                            <button><a href="#">Entrar</a></button>
+                        </div>
+                    </div>
+                    
+                    <div id="resultado">
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="nome">Nome</label>
+                            <input id="nome" type="text" name="nome" class="nome" placeholder="Digite seu nome" required>
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="email">E-mail</label>
+                            <input id="email" type="email" name="email" class="email" placeholder="Digite seu e-mail" required>
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="telefone">Celular</label>
+                            <input id="telefone" type="tel" name="telefone" class="telefone" placeholder="(xx) xxxx-xxxx" required>
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="cpf">Cpf</label>
+                            <input id="cpf" type="text" name="cpf" class="cpf" placeholder="Digite seu Cpf" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="nascimento">Data de nascimento </label>
+                            <input id="nascimento" type="date" name="nascimento" class="nascimento" placeholder="Digite sua data de nascimento" required>
+                        </div>
+    
+                        <div class="input-box">
+                            <label for="endereco">Endereço</label>
+                            <input id="endereco" type="text" name="endereco"  class="endereco" placeholder="Digite seu endereço completo" required>
+                        </div>
+
+                       
+                        <div class="input-box">
+                            <label for="senha">Senha</label>
+                            <input id="senha" type="password" name="senha" class="senha" placeholder="Digite sua senha" required>
+                        </div>
+    
+    
+                        <div class="input-box">
+                            <label for="senhaConfirmada">Confirme sua Senha</label>
+                            <input id="senhaConfirmada" type="password" name="senhaConfirmada" class="senhaConfirmada"
+                                placeholder="Digite novamente" required>
+                        </div>
+                    </div>
+                </div>
+    
+                    <div class="continue-button">
+                        <button>Continuar</button>
+                    </div>
+    
+                </form>
+            </div>
+        </div>
+    </main>
+    
+</body>
+
+</html>
