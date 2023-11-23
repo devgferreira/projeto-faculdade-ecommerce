@@ -5,9 +5,13 @@ import br.bellifish.loja.application.dtos.LoginDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTO;
 import br.bellifish.loja.application.dtos.UsuarioDTORequest;
 import br.bellifish.loja.application.interfaces.IUsuarioService;
+import br.bellifish.loja.domain.enums.ErrorCodes;
 import br.bellifish.loja.domain.model.payload.LoginMessage;
 import br.bellifish.loja.domain.model.user.Usuario;
 import br.bellifish.loja.domain.repository.IUsuarioRepository;
+import br.bellifish.loja.infra.constants.ErrorConstants;
+import br.bellifish.loja.infra.exceptions.ClienteJaExisteExeception;
+import br.bellifish.loja.infra.exceptions.ExceptionResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,7 +38,7 @@ public class UsuarioService implements IUsuarioService {
         String senha = passwordEncoder.encode(usuarioDTO.getSenha());
         Usuario usuario = _modelMapper.map(usuarioDTO, Usuario.class);
         if(_userRepository.findByCpf(usuarioDTO.getCpf()) != null){
-            throw new RuntimeException("Usuario já existe");
+           throw new ClienteJaExisteExeception(new ExceptionResponse(ErrorCodes.CLIENTE_JA_EXISTE, ErrorConstants.CLIENTE_JA_EXISTE));
         }
         usuario.setSenha(senha);
         return _modelMapper.map(_userRepository.save(usuario), UsuarioDTORequest.class);

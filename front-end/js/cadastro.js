@@ -27,7 +27,6 @@ function cadastrar(){
                 aniversario: ianiversario.value,
                 telefone: itelefone.value,
                 endereco: iendereco.value,
-
                 senha: isenha.value,
             })
 
